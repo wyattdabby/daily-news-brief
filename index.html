@@ -61,6 +61,7 @@
   .stat-card .sub { font-size: 0.75rem; color: var(--muted); }
   .stat-card.green-border { border-top-color: var(--green); }
   .stat-card.gold-border { border-top-color: var(--gold); }
+  .stat-card.red-border { border-top-color: var(--red); }
 
   /* Nav */
   .section-nav {
@@ -91,7 +92,6 @@
     border-bottom: 3px solid var(--teal); margin-bottom: 24px;
     display: flex; align-items: center; gap: 10px;
   }
-  .section-title .icon { font-size: 1.4rem; }
 
   /* Schedule */
   .class-list { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 24px; }
@@ -132,8 +132,9 @@
     border-left: 5px solid var(--teal); background: #E8F8F5;
     border-radius: 0 8px 8px 0; padding: 18px 22px; margin-bottom: 24px;
   }
+  .top-story .tag { font-size: 0.7rem; font-weight: 700; color: var(--teal); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
   .top-story h3 { font-size: 1.05rem; color: var(--primary-dark); margin-bottom: 8px; }
-  .top-story p { font-size: 0.88rem; color: var(--secondary-dark); }
+  .top-story p { font-size: 0.88rem; color: var(--secondary-dark); line-height: 1.7; }
 
   .rankings-bar {
     display: flex; flex-wrap: wrap; gap: 8px; margin: 16px 0 28px;
@@ -160,12 +161,20 @@
     font-size: 1rem; font-weight: 700; color: var(--secondary-dark);
     margin: 28px 0 12px; padding-bottom: 6px; border-bottom: 2px solid #eee;
   }
+  .sub-italic {
+    font-size: 0.95rem; font-weight: 600; font-style: italic; color: var(--secondary-dark);
+    margin: 20px 0 8px;
+  }
+
+  /* Source Citations */
+  .source { font-size: 0.72rem; color: var(--muted); font-style: italic; margin: 8px 0 16px; }
 
   /* News */
   .news-featured {
     border-left: 5px solid var(--teal); background: #E8F8F5;
     border-radius: 0 8px 8px 0; padding: 22px 26px; margin-bottom: 24px;
   }
+  .news-featured .tag { font-size: 0.7rem; font-weight: 700; color: var(--teal); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 6px; }
   .news-featured h3 { font-size: 1.05rem; color: var(--primary-dark); margin-bottom: 10px; }
   .news-featured p { font-size: 0.88rem; color: var(--secondary-dark); line-height: 1.7; }
   .pullquote {
@@ -186,6 +195,9 @@
   .news-item.world { border-left-color: var(--gold); }
   .news-item.business { border-left-color: var(--teal); }
   .news-item.culture { border-left-color: #8E44AD; }
+
+  /* Body text */
+  .body-text { font-size: 0.88rem; line-height: 1.7; margin-bottom: 12px; color: var(--secondary-dark); }
 
   /* Tables */
   .data-table { width: 100%; border-collapse: collapse; font-size: 0.84rem; margin: 16px 0; }
@@ -208,6 +220,17 @@
   /* Spending Chart */
   .chart-container { position: relative; height: 320px; margin: 20px 0; }
 
+  /* Stat Box */
+  .stat-box {
+    border-left: 4px solid var(--teal); background: var(--light-bg);
+    padding: 14px 20px; margin: 12px 0; border-radius: 0 8px 8px 0;
+  }
+  .stat-box.red-border { border-left-color: var(--red); }
+  .stat-box.green-border { border-left-color: var(--green); }
+  .stat-box .sb-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); font-weight: 600; }
+  .stat-box .sb-value { font-size: 1.5rem; font-weight: 700; margin: 4px 0; }
+  .stat-box .sb-context { font-size: 0.8rem; color: var(--muted); font-style: italic; }
+
   /* Real Estate */
   .re-stat-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin: 16px 0; }
   .re-stat {
@@ -224,6 +247,9 @@
     font-size: 0.86rem; color: var(--secondary-dark); margin: 16px 0;
     border-left: 4px solid var(--muted); line-height: 1.7;
   }
+
+  /* HR */
+  .section-divider { border: none; border-top: 1px solid #e9ecef; margin: 8px 0 20px; }
 
   /* Footer */
   .site-footer {
@@ -275,17 +301,17 @@
   <div class="stat-card gold-border">
     <div class="label">Sep Spending</div>
     <div class="value">$4,566.66</div>
-    <div class="sub">$937.32 less than last month</div>
+    <div class="sub">Amex Gold + Chase &middot; $937 less than last month</div>
+  </div>
+  <div class="stat-card red-border">
+    <div class="label">Next Exam</div>
+    <div class="value" style="font-size:1.1rem;">BUSFIN 3220</div>
+    <div class="sub" style="color:var(--red);font-weight:700;">TOMORROW — 8:00 AM</div>
   </div>
   <div class="stat-card green-border">
-    <div class="label">Sep Income</div>
-    <div class="value">$10,096.46</div>
-    <div class="sub">Chase + Amex</div>
-  </div>
-  <div class="stat-card green-border">
-    <div class="label">Net Cash Flow</div>
-    <div class="value" style="color:var(--green)">$5,529.80</div>
-    <div class="sub">Income minus spending</div>
+    <div class="label">This Week</div>
+    <div class="value" style="font-size:1.1rem;">10 Items Due</div>
+    <div class="sub">6 exams in next 11 days</div>
   </div>
 </div>
 
@@ -302,11 +328,11 @@
   </ul>
 </nav>
 
-<!-- Schedule & Assignments -->
+<!-- ===== SCHEDULE & ASSIGNMENTS ===== -->
 <div class="section" id="schedule">
-  <div class="section-title">Schedule &amp; Assignments</div>
+  <div class="section-title">Your Schedule &amp; Assignments</div>
 
-  <h3 style="font-size:0.95rem; margin-bottom:14px; color:var(--secondary-dark);">Today's Classes</h3>
+  <h3 style="font-size:0.95rem; margin-bottom:14px; color:var(--secondary-dark);">Today's Classes — Monday, September 14</h3>
   <div class="class-list">
     <div class="class-card">
       <div class="class-name">BUSFIN 3220 — Lecture</div>
@@ -370,13 +396,14 @@
   </div>
 </div>
 
-<!-- Sports -->
+<!-- ===== SPORTS ===== -->
 <div class="section" id="sports">
   <div class="section-title">Sports</div>
 
   <h3 class="subsection-title" style="margin-top:0;">College Football — AP Top 25 Shakeup</h3>
 
   <div class="top-story">
+    <div class="tag">Buckeyes Update</div>
     <h3>No. 1 Ohio State Falls at No. 4 Texas, 24–23</h3>
     <p>The Buckeyes came up one point short in Austin on Saturday night. Ohio State totaled 372 yards of offense with Jeremiah Smith hauling in 8 catches for 164 yards and a TD, but it wasn't enough. Julian Sayin went 17-of-32 for 278 yards. The loss drops Ohio State to No. 6 in the new AP Poll, while Texas jumps to No. 1.</p>
   </div>
@@ -394,7 +421,8 @@
     <span class="rank-chip">9. Texas A&amp;M</span>
     <span class="rank-chip">10. Alabama</span>
   </div>
-  <div class="commentary">Oregon tumbled from No. 2 to No. 21 after a 39–31 upset loss to Oklahoma State. Michigan re-entered the poll at No. 19 after beating Oklahoma.</div>
+  <p class="body-text">Oregon tumbled from No. 2 to No. 21 after a 39–31 upset loss to Oklahoma State. Michigan re-entered the poll at No. 19 after beating Oklahoma.</p>
+  <div class="source">Source: AP Poll, ohiostatebuckeyes.com, Yahoo Sports</div>
 
   <h3 class="subsection-title">NFL Week 1 — Sunday Scores (Sep 14)</h3>
   <div class="score-grid">
@@ -415,98 +443,93 @@
     <div class="score-card"><span class="winner">SEA 13</span> - <span class="loser">NE 10</span></div>
     <div class="score-card" style="border:1px solid var(--gold);">DEN @ KC — <span style="color:var(--gold);font-weight:600;">SNF In Progress</span></div>
   </div>
-  <div class="commentary">Chicago exploded for 59 points against Carolina, the highest Week 1 total in years. Detroit survived an OT thriller vs. New Orleans (31–30). The Eagles opened their Super Bowl defense with a 24–22 win over Washington. The Giants upset the Cowboys 28–20.</div>
+  <p class="body-text">Chicago exploded for 59 points against Carolina, the highest Week 1 total in years. Detroit survived an OT thriller vs. New Orleans (31–30). The Eagles opened their Super Bowl defense with a 24–22 win over Washington. The Giants upset the Cowboys 28–20.</p>
+  <div class="source">Source: NFL.com, PFF, ESPN</div>
 
   <h3 class="subsection-title">MLB Playoff Race</h3>
-  <div class="news-grid">
-    <div class="news-item business">
-      <h4>AL Division Leaders</h4>
-      <p><strong>East:</strong> Rays &middot; <strong>Central:</strong> White Sox (0.5 game lead) &middot; <strong>West:</strong> Astros (1 game lead)</p>
-    </div>
-    <div class="news-item business">
-      <h4>NL Division Leaders</h4>
-      <p><strong>East:</strong> Braves (88–62) &middot; <strong>Central:</strong> Brewers &middot; <strong>West:</strong> Dodgers</p>
-    </div>
-  </div>
-  <div class="commentary">The Brewers, Braves, and Dodgers are battling for the NL's best record. In the AL wild card, Cleveland leads Toronto by 1 game for the final spot. In the NL, the Padres lead the D-backs by 2.5 games.</div>
+  <p class="body-text"><strong>Division leaders:</strong> AL East: Rays | AL Central: White Sox (0.5 game lead) | AL West: Astros (1 game lead) | NL East: Braves (88–62) | NL Central: Brewers | NL West: Dodgers.</p>
+  <p class="body-text">The Brewers, Braves, and Dodgers are battling for the NL's best record — whoever finishes third gets the wild-card series. In the AL wild card, Cleveland leads Toronto by 1 game for the final spot. In the NL, the Padres lead the D-backs by 2.5 games.</p>
+  <div class="source">Source: MLB.com, ESPN, Fox Sports</div>
 </div>
 
-<!-- News -->
+<!-- ===== NEWS ===== -->
 <div class="section" id="news">
   <div class="section-title">News</div>
 
   <div class="news-featured">
+    <div class="tag">Top Story</div>
     <h3>Russian Drone Strikes Train Near Ukraine-Poland Border, Narrowly Missing Diplomatic Convoy</h3>
     <p>A Russian drone struck a train at the Yahodyn border station on Sunday — just minutes after a diplomatic train carrying former British PM Boris Johnson and former Swedish PM Carl Bildt had departed ahead of schedule. A second train carrying former CIA Director David Petraeus was still at the station; it was evacuated as the drone approached. No casualties reported.</p>
   </div>
   <div class="pullquote">
     "It is highly probable that the Russian drone's intended target was in fact the diplomatic train, which had departed the station earlier than scheduled."
-    <span class="attr">— Ukrzaliznytsia</span>
+    <span class="attr">— Ukrzaliznytsia (Ukraine state rail)</span>
   </div>
-  <div class="commentary">The near-miss has amplified calls across NATO capitals for stronger air-defense corridors along Ukraine's western rail links. Poland scrambled interceptor jets in response.</div>
+  <p class="body-text">The near-miss has amplified calls across NATO capitals for stronger air-defense corridors along Ukraine's western rail links. Poland scrambled interceptor jets in response.</p>
+  <div class="source">Source: Washington Post, NPR, NBC News</div>
+
+  <hr class="section-divider">
 
   <h3 class="subsection-title">U.S. Politics &amp; The Iran Conflict</h3>
-  <div class="news-grid">
-    <div class="news-item politics">
-      <h4>Trump: Iran War Will End "Immediately" After Midterms</h4>
-      <p>President Trump told reporters the conflict with Iran would end "immediately after the election" on November 3. The comment drew sharp bipartisan reaction on Capitol Hill.</p>
-    </div>
-    <div class="news-item politics">
-      <h4>IRGC Launches Missiles at Al-Azraq Air Base in Jordan</h4>
-      <p>Iran's Revolutionary Guard struck the base with ballistic missiles. Oil prices surged, with Brent crude briefly crossing $100/barrel.</p>
-    </div>
-    <div class="news-item politics">
-      <h4>Republican Convention in Dallas</h4>
-      <p>Trump pushed his "Trump dividend" economic message ahead of the Nov 3 midterms, rallying the base at the American Airlines Center.</p>
-    </div>
-    <div class="news-item politics">
-      <h4>New Hampshire Primary Results</h4>
-      <p>Chris Pappas (D) wins with 65%. Chris Sununu (R) wins with 68.5%. Both cruised to convincing victories.</p>
-    </div>
+
+  <div class="sub-italic">Trump: Iran War Will End "Immediately" After Midterms</div>
+  <p class="body-text">President Trump told reporters on September 9 that the conflict with Iran would end "immediately after the election" on November 3, asserting that Tehran is deliberately prolonging the fighting to keep fuel prices elevated and influence the midterm vote.</p>
+  <div class="pullquote">
+    "I think the war's going to end immediately after the election because they can't hold out any longer."
+    <span class="attr">— President Donald Trump</span>
   </div>
+  <p class="body-text">Iran's IRGC launched missiles at the Al-Azraq air base in Jordan earlier this month, with 18 of 20 intercepted. Oil prices surged, with Brent crude briefly crossing $100/barrel.</p>
+  <div class="source">Source: CNN, Al Jazeera, NBC News, The National</div>
+
+  <div class="sub-italic">Republican Convention in Dallas</div>
+  <p class="body-text">The two-day convention showcased Trump's "Trump dividend" economic message. The midterms on November 3 will determine control of Congress — all 435 House seats and 34 Senate seats are on the ballot.</p>
+
+  <div class="sub-italic">New Hampshire Primary Results</div>
+  <p class="body-text">Chris Pappas (D) won with 65%; Chris Sununu (R) secured 68.5%. The Senate race will be one of November's most watched.</p>
+  <div class="source">Source: NPR, The Hill</div>
+
+  <hr class="section-divider">
 
   <h3 class="subsection-title">World News</h3>
-  <div class="news-grid">
-    <div class="news-item world">
-      <h4>Philippine Ferry Fire — 76 Dead, 13 Missing</h4>
-      <p>The MV June Aster caught fire off the coast of the Philippines. Rescue operations continue for the 13 still missing.</p>
-    </div>
-    <div class="news-item world">
-      <h4>NAZA Film Wins Venice Prize</h4>
-      <p>Documentary by Yuval Abraham and Rachel Szor received a 25-minute standing ovation at the Venice Film Festival.</p>
-    </div>
-  </div>
+
+  <div class="sub-italic">Philippine Ferry Fire — 76 Dead, 13 Missing</div>
+  <p class="body-text">The MV June Aster ferry fire death toll climbed to 76. The vessel was carrying 132 people when fire engulfed its lower decks 1.3 miles off Coron, Palawan. 43 survivors were rescued. Rescue operations continue for the 13 still missing.</p>
+  <div class="source">Source: Al Jazeera, US News, Philstar</div>
+
+  <div class="sub-italic">NAZA Film Wins Venice Prize</div>
+  <p class="body-text">The documentary by Yuval Abraham and Rachel Szor won the Special Jury Prize at Venice, featuring 24 anonymized interviews with Israeli military insiders. 25-minute standing ovation. Israel's culture minister threatened to revoke the filmmakers' citizenship.</p>
+  <div class="source">Source: Democracy Now!, Al Jazeera, Jerusalem Post</div>
+
+  <hr class="section-divider">
 
   <h3 class="subsection-title">Business &amp; Technology</h3>
-  <div class="news-grid">
-    <div class="news-item business">
-      <h4>Amazon Suspends 21 Air After Fatal Miami Crash</h4>
-      <p>Amazon Air suspended cargo carrier 21 Air following a fatal crash near Miami International Airport. Investigation underway.</p>
-    </div>
-    <div class="news-item business">
-      <h4>Uber Cuts 3,300 Jobs (10% of Workforce)</h4>
-      <p>Uber announced a major round of layoffs as it restructures for profitability amid rising costs.</p>
-    </div>
-    <div class="news-item business">
-      <h4>Anthropic Posts First Profitable Quarter</h4>
-      <p>$11.5 billion in Q2 revenue marks a milestone for the AI company, making it one of the fastest-growing enterprise software firms ever.</p>
-    </div>
-    <div class="news-item business">
-      <h4>Fed Rate Decision Wednesday</h4>
-      <p>Markets expect a 25bp hike to 3.75%–4.00%. The decision will be released at 2:00 PM ET on Wednesday.</p>
-    </div>
-  </div>
 
-  <h3 class="subsection-title">Culture</h3>
-  <div class="news-item culture" style="margin-top:12px;">
-    <h4>Celine Dion Returns to the Stage in Paris</h4>
-    <p>30,000 fans packed a Paris arena as Celine Dion performed her first full concert in over two years, bringing the crowd to tears with a triumphant return.</p>
-  </div>
+  <div class="sub-italic">Amazon Suspends 21 Air After Fatal Miami Crash</div>
+  <p class="body-text">A Boeing 767-300 freighter overran the runway at MIA on Sep 6, killing five. NTSB found pilots were "too fast" on approach. Amazon paused all operations with the carrier.</p>
+
+  <div class="sub-italic">Uber Cuts 3,300 Jobs (10% of Workforce)</div>
+  <p class="body-text">CEO Khosrowshahi cited the need to reduce management layers by 20%. Over 128,500 tech workers have been cut across 299 companies in 2026 through Sep 10.</p>
+
+  <div class="sub-italic">Anthropic Posts First Profitable Quarter</div>
+  <p class="body-text">$11.5B in Q2 2026 revenue, 80%+ gross margins. Annualized run rate: $65B. Revenue projected to reach $34.5B in 2027.</p>
+
+  <div class="sub-italic">Fed Rate Decision Wednesday — Hike Expected</div>
+  <p class="body-text">Markets pricing a 25bp hike to 3.75%–4.00%. PCE inflation at 3.7%, well above the 2% target. A hike would push mortgage rates higher.</p>
+  <div class="source">Source: CNBC, Forbes, TechCrunch, Bloomberg</div>
+
+  <hr class="section-divider">
+
+  <h3 class="subsection-title">Culture &amp; Entertainment</h3>
+
+  <div class="sub-italic">Celine Dion Returns to the Stage in Paris</div>
+  <p class="body-text">30,000 fans packed the Plenitude Arena for her first concert in six years. 26 shows from Sep 12–Oct 17. Nine million fans entered the ticket lottery. All shows sold out within hours.</p>
+  <div class="source">Source: Rolling Stone, Euronews, NPR</div>
 </div>
 
-<!-- Stock Market Performance -->
+<!-- ===== STOCK MARKET ===== -->
 <div class="section" id="market">
   <div class="section-title">Stock Market Performance</div>
+  <p class="body-text">Broad market snapshot from your Robinhood holdings:</p>
   <table class="data-table">
     <thead>
       <tr><th>ETF</th><th>Price</th><th>Change</th><th>% Change</th></tr>
@@ -517,16 +540,22 @@
       <tr><td><strong>QQQ</strong> — Nasdaq 100</td><td>$709.16</td><td class="neg">-$0.02</td><td class="neg">-0.00%</td></tr>
     </tbody>
   </table>
-  <div class="commentary">As of early Monday afternoon, markets are pulling back modestly ahead of Wednesday's Fed rate decision.</div>
+  <p class="body-text">As of early Monday afternoon, markets are pulling back modestly ahead of Wednesday's Fed rate decision. Investors rotating out of rate-sensitive growth stocks.</p>
+  <div class="source">Source: Robinhood (live quotes)</div>
 </div>
 
-<!-- Portfolio Snapshot -->
+<!-- ===== PORTFOLIO ===== -->
 <div class="section" id="portfolio">
   <div class="section-title">Portfolio Snapshot</div>
-  <p style="font-size:1.1rem; font-weight:700; margin-bottom:18px;">Total Value: <span style="color:var(--primary-dark);">$3,123.91</span></p>
+  <div class="stat-box">
+    <div class="sb-label">Portfolio Value</div>
+    <div class="sb-value">$3,123.91</div>
+    <div class="sb-context">Across equities, ETFs, and crypto</div>
+  </div>
 
   <div class="movers-grid" id="moversGrid"></div>
 
+  <h3 class="subsection-title">All Holdings</h3>
   <div style="overflow-x:auto;">
     <table class="data-table" id="holdingsTable">
       <thead>
@@ -545,71 +574,63 @@
       <tbody id="holdingsBody"></tbody>
     </table>
   </div>
+  <div class="source">Source: Robinhood (live quotes)</div>
 </div>
 
-<!-- Spending Snapshot -->
+<!-- ===== SPENDING ===== -->
 <div class="section" id="spending">
   <div class="section-title">Spending Snapshot</div>
 
-  <div class="quick-stats" style="padding:0; margin:0 0 24px; max-width:100%;">
-    <div class="stat-card gold-border">
-      <div class="label">Sep Spending (1st–14th)</div>
-      <div class="value">$4,566.66</div>
-      <div class="sub">$937.32 less than same period last month</div>
-    </div>
-    <div class="stat-card green-border">
-      <div class="label">Sep Income</div>
-      <div class="value">$10,096.46</div>
-      <div class="sub">&nbsp;</div>
-    </div>
-    <div class="stat-card green-border">
-      <div class="label">Net Cash Flow</div>
-      <div class="value" style="color:var(--green);">$5,529.80</div>
-      <div class="sub">&nbsp;</div>
-    </div>
-    <div class="stat-card">
-      <div class="label">Accounts Tracked</div>
-      <div class="value" style="font-size:0.95rem;">Amex Gold &middot; Chase</div>
-      <div class="sub">****7003 &middot; ****8126</div>
-    </div>
+  <div class="stat-box green-border">
+    <div class="sb-label">September Spending (1st – 14th)</div>
+    <div class="sb-value">$4,566.66</div>
+    <div class="sb-context">$937.32 less than the same period last month</div>
   </div>
 
-  <h3 style="font-size:0.95rem; color:var(--secondary-dark); margin-bottom:8px;">Daily Spending — September 1–13</h3>
+  <p class="body-text">Accounts tracked: <strong>American Express Gold Card</strong> (****7003) and <strong>Chase College Checking</strong> (****8126).</p>
+
+  <h3 style="font-size:0.95rem; color:var(--secondary-dark); margin: 20px 0 8px;">Daily Spending — September 1–13</h3>
   <div class="chart-container">
     <canvas id="spendingChart"></canvas>
   </div>
+  <div class="source">Source: Era Context (Amex Gold + Chase College Checking)</div>
 </div>
 
-<!-- Real Estate Market -->
+<!-- ===== REAL ESTATE ===== -->
 <div class="section" id="realestate">
   <div class="section-title">Real Estate Market</div>
+  <p class="body-text">The housing market is sending mixed signals. Sales are slipping, but inventory is finally building.</p>
 
+  <div class="sub-italic">Mortgage Rates Climb</div>
   <div class="re-stat-grid">
-    <div class="re-stat">
+    <div class="re-stat" style="border-top-color:var(--red);">
       <div class="re-label">30-Year Fixed Rate</div>
-      <div class="re-val">6.82%</div>
-      <div class="re-sub">Up from 6.71% last week</div>
-      <div class="re-sub" style="margin-top:8px;font-size:0.78rem;">A buyer financing $350K at 6.82% pays ~$2,289/mo in P&amp;I.</div>
+      <div class="re-val" style="color:var(--red);">6.82%</div>
+      <div class="re-sub">Up from 6.71% last week — nearing a one-year high</div>
     </div>
     <div class="re-stat" style="border-top-color:var(--red);">
       <div class="re-label">August Sales Pace</div>
-      <div class="re-val">3.98M</div>
+      <div class="re-val" style="color:var(--red);">3.98M</div>
       <div class="re-sub">Down 2.0% — first time below 4M since June 2025</div>
-      <div class="re-sub" style="margin-top:8px;font-size:0.78rem;">Median price rose 1.6% YoY to $434,100.</div>
     </div>
-    <div class="re-stat" style="border-top-color:var(--gold);">
+    <div class="re-stat" style="border-top-color:var(--green);">
       <div class="re-label">Homes for Sale</div>
-      <div class="re-val">1.62M</div>
+      <div class="re-val" style="color:var(--green);">1.62M</div>
       <div class="re-sub">Up 5.9% YoY — highest since Nov 2019</div>
-      <div class="re-sub" style="margin-top:8px;font-size:0.78rem;">4.9 months of supply — highest in a decade.</div>
     </div>
   </div>
+
+  <div class="sub-italic">What It Means</div>
+  <p class="body-text">A buyer financing $350K at 6.82% pays ~$2,289/mo in P&amp;I — $25 more than last week, $160 more than spring. The Fed's Wednesday decision could push rates even higher.</p>
+  <p class="body-text">Median existing-home price rose 1.6% YoY to $434,100 — 37th consecutive month of annual gains, but appreciation is slowing.</p>
+  <p class="body-text">4.9 months of supply — highest in a decade, approaching the 5–6 month balanced range. More choices for buyers, less bidding pressure.</p>
+  <div class="source">Source: NAR, HousingWire, Mortgage News Daily</div>
 </div>
 
 <!-- Footer -->
 <footer class="site-footer">
   <div class="end-mark">End of Brief</div>
-  <p class="disclaimer">Data snapshot as of Sep 14, 2026. Portfolio data from Robinhood. Spending data from Era Context. News compiled from multiple sources. This page is regenerated daily.</p>
+  <p class="disclaimer">Data snapshot as of Sep 14, 2026. Portfolio data from Robinhood. Spending data from Era Context (Amex Gold ****7003 + Chase ****8126 only). News compiled from multiple sources. This page is regenerated daily.</p>
 </footer>
 
 <script>
@@ -668,12 +689,9 @@
     };
   }).filter(function(c) { return c.mktVal > 0.50; });
 
-  // Sort by mktVal descending for the main table
   var sorted = computed.slice().sort(function(a, b) { return b.mktVal - a.mktVal; });
 
-  // Winners (positive day % only, top 5)
   var winners = computed.filter(function(c) { return c.dayPct > 0; }).sort(function(a, b) { return b.dayPct - a.dayPct; }).slice(0, 5);
-  // Losers (negative day % only, bottom 5)
   var losers = computed.filter(function(c) { return c.dayPct < 0; }).sort(function(a, b) { return a.dayPct - b.dayPct; }).slice(0, 5);
 
   function fmt(n, d) { return n.toFixed(d !== undefined ? d : 2); }
